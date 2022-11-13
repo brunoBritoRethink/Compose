@@ -2,19 +2,16 @@ package com.example.compose
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Face
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.compose.ui.componemtes.DrawerMenu
 import com.example.compose.ui.componemtes.NavigationBottom
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnrememberedMutableState")
@@ -27,7 +24,18 @@ fun HomeScreen(
             .fillMaxHeight()
             .fillMaxWidth()
     ) {
-        DrawerMenu(navController = navController)
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Text(
+                text = "Pokemons",
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp,
+                modifier = Modifier.padding(top = 20.dp)
+                )
+        }
         NavigationBottom(navController = navController)
+        DrawerMenu(navController = navController)
     }
 }

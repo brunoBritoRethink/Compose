@@ -58,10 +58,20 @@ fun DrawerMenu(navController: NavController){
             ) {
                 /*Text(text = if (drawerState.isClosed) ">>> Swipe >>>" else "<<< Swipe <<<")
                 Spacer(Modifier.height(20.dp))*/
-                Button(onClick = { scope.launch { drawerState.open() } }) {
+                /*Button(onClick = { scope.launch { drawerState.open() } }) {
                     Icon(Icons.Filled.Menu, contentDescription = "", modifier = Modifier.padding(end = 8.dp))
                     Text("Menu")
-                }
+                }*/
+                Icon(
+                    Icons.Filled.Menu,
+                    contentDescription = "menu",
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .size(48.dp)
+                        .clickable {
+                    scope.launch { drawerState.open() }
+                })
+                CardPokemons(navController)
             }
         }
     )

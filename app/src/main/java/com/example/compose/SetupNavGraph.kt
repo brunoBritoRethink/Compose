@@ -29,6 +29,16 @@ fun SetupNavGraph(
         ){
             DrawerScreen(navController = navController, it.arguments)
         }
+        composable(
+            route = Screens.pokemon.route,
+            arguments = listOf(
+                navArgument(name = DETAIL_ARGUMENT_KEY2){
+                    type = NavType.StringType
+                }
+            )
+        ){
+            PokemonSelected(navController = navController, argument = it.arguments)
+        }
     }
 
 }
